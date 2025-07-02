@@ -519,36 +519,6 @@
             animation: fadeIn 0.8s ease-out;
         }
 
-        /* Download Button */
-        .download-btn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 12px 24px;
-            font-size: 0.9em;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .download-btn:hover {
-            background: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .download-btn::before {
-            content: '⬇ ';
-            margin-right: 5px;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             body {
@@ -584,10 +554,6 @@
 
             .date-badge {
                 align-self: flex-start;
-            }
-
-            .download-btn {
-                display: block;
             }
         }
 
@@ -714,11 +680,6 @@
             .company a {
                 color: var(--accent-color) !important;
                 text-decoration: none !important;
-            }
-
-            /* Hide download button in print */
-            .download-btn {
-                display: none !important;
             }
         }
     </style>
@@ -887,10 +848,34 @@
         </div>
     </div>
 
-    <!-- Download PDF Button (Mobile Only) -->
-    <button class="download-btn" onclick="window.print()">Download PDF</button>
-
     <script>
+                       
+                // Add special print class for mobile
+                document.body.classList.add('mobile-print');
+                
+                // Force desktop layout
+                const container = document.querySelector('.container');
+                container.style.maxWidth = '210mm';
+                
+                const mainContent = document.querySelector('.main-content');
+                mainContent.style.cssText = 'grid-template-columns: 2fr 1fr !important; display: grid !important;';
+                
+                // Trigger print after a small delay to ensure styles are applied
+                setTimeout(() => {
+                    window.print();
+                    
+                    // Restore original state after print
+                    setTimeout(() => {
+                        document.body.classList.remove('mobile-print');
+                        mainContent.style.cssText = '';
+                        container.style.maxWidth = '';
+                        viewport.content = originalContent;
+                    }, 500);
+                }, 100);
+            } else {
+                window.print();
+            }
+        }
         // Add smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
