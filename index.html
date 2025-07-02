@@ -702,6 +702,94 @@
                 border-left-width: 3px !important;
             }
 
+            /* Mobile-specific print adjustments */
+            @media (max-width: 768px) {
+                body {
+                    font-size: 9pt !important;
+                }
+                
+                .header {
+                    padding: 10px 15px !important;
+                }
+                
+                .profile-img {
+                    width: 60px !important;
+                    height: 60px !important;
+                }
+                
+                .header-info h1 {
+                    font-size: 18pt !important;
+                }
+                
+                .header-info h2 {
+                    font-size: 11pt !important;
+                }
+                
+                .contact-info {
+                    font-size: 8pt !important;
+                }
+                
+                .main-content {
+                    padding: 10px !important;
+                    gap: 10px !important;
+                }
+                
+                .section {
+                    margin-bottom: 8px !important;
+                }
+                
+                .section-title {
+                    font-size: 12pt !important;
+                    margin-bottom: 3px !important;
+                }
+                
+                .experience-item {
+                    margin-bottom: 6px !important;
+                    padding: 4px !important;
+                }
+                
+                .experience-item li {
+                    font-size: 8pt !important;
+                    margin-bottom: 1px !important;
+                }
+                
+                .sidebar-section {
+                    margin-bottom: 6px !important;
+                    padding: 6px !important;
+                }
+                
+                .sidebar-section h3 {
+                    font-size: 11pt !important;
+                }
+                
+                .certification-item {
+                    font-size: 7.5pt !important;
+                    margin-bottom: 2px !important;
+                }
+                
+                .skill-category p {
+                    font-size: 7.5pt !important;
+                }
+                
+                .summary {
+                    font-size: 8pt !important;
+                    padding: 6px !important;
+                }
+                
+                .date-badge {
+                    font-size: 7pt !important;
+                    padding: 1px 6px !important;
+                }
+                
+                .job-title {
+                    font-size: 10pt !important;
+                }
+                
+                .company {
+                    font-size: 8pt !important;
+                }
+            }
+
             /* Hide animations */
             * {
                 animation: none !important;
@@ -721,211 +809,6 @@
             /* Hide download button in print */
             .download-btn {
                 display: none !important;
-            }
-        }
-
-        /* Mobile-specific print styles */
-        @media print and (max-width: 768px) {
-            @page {
-                size: A4;
-                margin: 5mm;
-            }
-
-            * {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            body {
-                font-size: 7pt !important;
-                line-height: 1.1 !important;
-            }
-
-            .container {
-                height: 287mm !important;
-                overflow: hidden !important;
-            }
-
-            .header {
-                padding: 8px 10px !important;
-            }
-
-            .header-content {
-                gap: 8px !important;
-            }
-
-            .profile-img {
-                width: 40px !important;
-                height: 40px !important;
-                border-width: 2px !important;
-            }
-
-            .header-info h1 {
-                font-size: 14pt !important;
-                margin-bottom: 1px !important;
-            }
-
-            .header-info h2 {
-                font-size: 9pt !important;
-                margin-bottom: 3px !important;
-            }
-
-            .contact-info {
-                gap: 6px !important;
-                font-size: 6.5pt !important;
-            }
-
-            .contact-item::before {
-                width: 8px !important;
-                height: 8px !important;
-                margin-right: 2px !important;
-            }
-
-            .main-content {
-                gap: 8px !important;
-                padding: 5px 8px !important;
-            }
-
-            .section {
-                margin-bottom: 3px !important;
-            }
-
-            .section-title {
-                font-size: 9pt !important;
-                margin-bottom: 2px !important;
-                padding-bottom: 1px !important;
-                border-bottom-width: 1px !important;
-            }
-
-            .summary {
-                font-size: 6.5pt !important;
-                padding: 3px 5px !important;
-                margin-bottom: 3px !important;
-                line-height: 1.2 !important;
-                border-left-width: 2px !important;
-            }
-
-            .experience-item {
-                margin-bottom: 3px !important;
-                padding: 2px 3px !important;
-                border: 0.5px solid #ddd !important;
-            }
-
-            .experience-header {
-                margin-bottom: 1px !important;
-                gap: 3px !important;
-            }
-
-            .job-title {
-                font-size: 7.5pt !important;
-                margin-bottom: 0 !important;
-                font-weight: 600 !important;
-            }
-
-            .company {
-                font-size: 6.5pt !important;
-                margin: 0 !important;
-            }
-
-            .date-badge {
-                font-size: 5.5pt !important;
-                padding: 0.5px 3px !important;
-                border-radius: 8px !important;
-            }
-
-            .experience-item ul {
-                margin-top: 1px !important;
-                margin-bottom: 0 !important;
-                padding-left: 8px !important;
-            }
-
-            .experience-item li {
-                font-size: 6pt !important;
-                line-height: 1.15 !important;
-                margin-bottom: 0.5px !important;
-                padding-left: 3px !important;
-            }
-
-            .experience-item li::before {
-                content: '•' !important;
-                font-size: 5pt !important;
-                left: -6px !important;
-            }
-
-            .education-item {
-                padding: 2px 3px !important;
-                margin-bottom: 0 !important;
-                border-left-width: 2px !important;
-            }
-
-            .degree {
-                font-size: 7pt !important;
-                margin: 0 !important;
-            }
-
-            .university {
-                font-size: 6.5pt !important;
-                margin: 0 !important;
-            }
-
-            .education-date {
-                font-size: 6pt !important;
-                margin: 0 !important;
-            }
-
-            .sidebar-section {
-                margin-bottom: 3px !important;
-                padding: 3px !important;
-            }
-
-            .sidebar-section h3 {
-                font-size: 8pt !important;
-                margin-bottom: 2px !important;
-                padding-bottom: 1px !important;
-                border-bottom-width: 1px !important;
-            }
-
-            .certification-item {
-                font-size: 5.5pt !important;
-                margin-bottom: 0.5px !important;
-                padding-left: 12px !important;
-                line-height: 1.1 !important;
-            }
-
-            .certification-item::before {
-                font-size: 5pt !important;
-                margin-right: 2px !important;
-            }
-
-            .skill-category {
-                margin-bottom: 2px !important;
-            }
-
-            .skill-category h4 {
-                font-size: 6.5pt !important;
-                margin-bottom: 0.5px !important;
-            }
-
-            .skill-category p {
-                font-size: 5.5pt !important;
-                line-height: 1.1 !important;
-                margin: 0 !important;
-            }
-
-            .interests-text {
-                font-size: 5.5pt !important;
-                margin: 0 !important;
-            }
-
-            /* Remove any extra spacing */
-            br {
-                display: none !important;
-            }
-
-            /* Ensure no overflow */
-            * {
-                overflow: hidden !important;
-                max-width: 100% !important;
             }
         }
     </style>
