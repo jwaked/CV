@@ -639,8 +639,6 @@
             .main-content {
                 gap: 15px;
                 padding: 15px;
-                display: grid !important;
-                grid-template-columns: 2fr 1fr !important;
             }
 
             .section {
@@ -702,94 +700,6 @@
                 border-left-width: 3px !important;
             }
 
-            /* Mobile-specific print adjustments */
-            @media (max-width: 768px) {
-                body {
-                    font-size: 9pt !important;
-                }
-                
-                .header {
-                    padding: 10px 15px !important;
-                }
-                
-                .profile-img {
-                    width: 60px !important;
-                    height: 60px !important;
-                }
-                
-                .header-info h1 {
-                    font-size: 18pt !important;
-                }
-                
-                .header-info h2 {
-                    font-size: 11pt !important;
-                }
-                
-                .contact-info {
-                    font-size: 8pt !important;
-                }
-                
-                .main-content {
-                    padding: 10px !important;
-                    gap: 10px !important;
-                }
-                
-                .section {
-                    margin-bottom: 8px !important;
-                }
-                
-                .section-title {
-                    font-size: 12pt !important;
-                    margin-bottom: 3px !important;
-                }
-                
-                .experience-item {
-                    margin-bottom: 6px !important;
-                    padding: 4px !important;
-                }
-                
-                .experience-item li {
-                    font-size: 8pt !important;
-                    margin-bottom: 1px !important;
-                }
-                
-                .sidebar-section {
-                    margin-bottom: 6px !important;
-                    padding: 6px !important;
-                }
-                
-                .sidebar-section h3 {
-                    font-size: 11pt !important;
-                }
-                
-                .certification-item {
-                    font-size: 7.5pt !important;
-                    margin-bottom: 2px !important;
-                }
-                
-                .skill-category p {
-                    font-size: 7.5pt !important;
-                }
-                
-                .summary {
-                    font-size: 8pt !important;
-                    padding: 6px !important;
-                }
-                
-                .date-badge {
-                    font-size: 7pt !important;
-                    padding: 1px 6px !important;
-                }
-                
-                .job-title {
-                    font-size: 10pt !important;
-                }
-                
-                .company {
-                    font-size: 8pt !important;
-                }
-            }
-
             /* Hide animations */
             * {
                 animation: none !important;
@@ -809,6 +719,189 @@
             /* Hide download button in print */
             .download-btn {
                 display: none !important;
+            }
+        }
+
+        /* Special mobile print styles */
+        @media print {
+            body.mobile-print {
+                font-size: 8pt !important;
+                line-height: 1.2 !important;
+            }
+            
+            body.mobile-print .container {
+                max-width: 210mm !important;
+                width: 210mm !important;
+            }
+            
+            body.mobile-print .header {
+                padding: 8px 12px !important;
+            }
+            
+            body.mobile-print .profile-img {
+                width: 50px !important;
+                height: 50px !important;
+                border-width: 2px !important;
+            }
+            
+            body.mobile-print .header-info h1 {
+                font-size: 16pt !important;
+                margin-bottom: 2px !important;
+            }
+            
+            body.mobile-print .header-info h2 {
+                font-size: 9pt !important;
+                margin-bottom: 3px !important;
+            }
+            
+            body.mobile-print .contact-info {
+                font-size: 6.5pt !important;
+                gap: 8px !important;
+            }
+            
+            body.mobile-print .contact-item::before {
+                width: 10px !important;
+                height: 10px !important;
+            }
+            
+            body.mobile-print .main-content {
+                padding: 8px !important;
+                gap: 8px !important;
+                grid-template-columns: 2fr 1fr !important;
+                display: grid !important;
+            }
+            
+            body.mobile-print .section {
+                margin-bottom: 4px !important;
+            }
+            
+            body.mobile-print .section-title {
+                font-size: 10pt !important;
+                margin-bottom: 2px !important;
+                padding-bottom: 2px !important;
+            }
+            
+            body.mobile-print .summary {
+                font-size: 7pt !important;
+                padding: 4px !important;
+                margin-bottom: 5px !important;
+                line-height: 1.2 !important;
+            }
+            
+            body.mobile-print .experience-item {
+                margin-bottom: 3px !important;
+                padding: 2px !important;
+                border: 0.5px solid #ddd !important;
+            }
+            
+            body.mobile-print .experience-header {
+                margin-bottom: 1px !important;
+            }
+            
+            body.mobile-print .experience-item ul {
+                margin-top: 1px !important;
+                padding-left: 8px !important;
+            }
+            
+            body.mobile-print .experience-item li {
+                font-size: 6.5pt !important;
+                margin-bottom: 0 !important;
+                line-height: 1.1 !important;
+                padding-left: 4px !important;
+            }
+            
+            body.mobile-print .experience-item li::before {
+                font-size: 5pt !important;
+                left: -6px !important;
+            }
+            
+            body.mobile-print .job-title {
+                font-size: 8pt !important;
+                margin-bottom: 0 !important;
+            }
+            
+            body.mobile-print .company {
+                font-size: 6.5pt !important;
+                margin: 0 !important;
+            }
+            
+            body.mobile-print .date-badge {
+                font-size: 5.5pt !important;
+                padding: 0px 3px !important;
+            }
+            
+            body.mobile-print .sidebar-section {
+                margin-bottom: 3px !important;
+                padding: 3px !important;
+            }
+            
+            body.mobile-print .sidebar-section h3 {
+                font-size: 9pt !important;
+                margin-bottom: 2px !important;
+                padding-bottom: 1px !important;
+            }
+            
+            body.mobile-print .certification-item {
+                font-size: 6pt !important;
+                margin-bottom: 0.5px !important;
+                line-height: 1.05 !important;
+                padding-left: 12px !important;
+            }
+            
+            body.mobile-print .certification-item::before {
+                font-size: 5pt !important;
+            }
+            
+            body.mobile-print .skill-category {
+                margin-bottom: 2px !important;
+            }
+            
+            body.mobile-print .skill-category h4 {
+                font-size: 6.5pt !important;
+                margin-bottom: 0.5px !important;
+            }
+            
+            body.mobile-print .skill-category p {
+                font-size: 6pt !important;
+                margin: 0 !important;
+                line-height: 1.1 !important;
+            }
+            
+            body.mobile-print .education-item {
+                padding: 2px !important;
+                margin-bottom: 0 !important;
+            }
+            
+            body.mobile-print .degree {
+                font-size: 7.5pt !important;
+                margin: 0 !important;
+            }
+            
+            body.mobile-print .university {
+                font-size: 6.5pt !important;
+                margin: 0 !important;
+            }
+            
+            body.mobile-print .education-date {
+                font-size: 6pt !important;
+                margin: 0 !important;
+            }
+            
+            body.mobile-print .interests-text {
+                font-size: 6pt !important;
+                margin: 0 !important;
+            }
+            
+            /* Force single page on mobile */
+            body.mobile-print {
+                overflow: hidden !important;
+                height: 297mm !important;
+                max-height: 297mm !important;
+            }
+            
+            body.mobile-print .container {
+                height: 100% !important;
+                overflow: hidden !important;
             }
         }
     </style>
@@ -978,9 +1071,44 @@
     </div>
 
     <!-- Download PDF Button (Mobile Only) -->
-    <button class="download-btn" onclick="window.print()">Download PDF</button>
+    <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
 
     <script>
+        // Function to handle PDF download
+        function downloadPDF() {
+            // Check if on mobile
+            if (window.innerWidth <= 768) {
+                // Add viewport meta tag for better PDF rendering
+                let viewport = document.querySelector('meta[name="viewport"]');
+                const originalContent = viewport.content;
+                viewport.content = 'width=1024, initial-scale=0.5';
+                
+                // Add special print class for mobile
+                document.body.classList.add('mobile-print');
+                
+                // Force desktop layout
+                const container = document.querySelector('.container');
+                container.style.maxWidth = '210mm';
+                
+                const mainContent = document.querySelector('.main-content');
+                mainContent.style.cssText = 'grid-template-columns: 2fr 1fr !important; display: grid !important;';
+                
+                // Trigger print after a small delay to ensure styles are applied
+                setTimeout(() => {
+                    window.print();
+                    
+                    // Restore original state after print
+                    setTimeout(() => {
+                        document.body.classList.remove('mobile-print');
+                        mainContent.style.cssText = '';
+                        container.style.maxWidth = '';
+                        viewport.content = originalContent;
+                    }, 500);
+                }, 100);
+            } else {
+                window.print();
+            }
+        }
         // Add smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
